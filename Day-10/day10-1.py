@@ -1,11 +1,14 @@
 def main(raw_input):
-    # Parse input
-
-    # Solve problem
-
-    # Return solution
+    lst = range(0, 256)
+    current_pos = 0
+    skip_size = 0
+    lenghts = [int(x) for x in raw_input.split(',')]
+    
     return None
 
+
+def split_list(start, length):
+    
 
 def get_input(filename):
     with open(filename) as f:
@@ -14,5 +17,5 @@ def get_input(filename):
 
 
 if __name__ == '__main__':
-    puzzle_input = get_input('input.txt')
+    puzzle_input = get_input('Day-10\input.txt')
     print(main(puzzle_input))

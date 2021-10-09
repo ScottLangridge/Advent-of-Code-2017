@@ -1,10 +1,18 @@
 def main(raw_input):
-    # Parse input
+    instructions = list(map(lambda x: int(x), raw_input.split('\n')))
+    
+    jump_count = 0
+    pc = 0
 
-    # Solve problem
+    try:
+        while True:
+            new_pc = pc + instructions[pc]
+            instructions[pc] += 1
+            pc = new_pc
+            jump_count += 1
 
-    # Return solution
-    return None
+    except:
+        return jump_count  
 
 
 def get_input(filename):

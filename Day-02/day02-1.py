@@ -1,10 +1,13 @@
 def main(raw_input):
-    # Parse input
 
-    # Solve problem
+    checksums = raw_input.split('\n')
+    diffs = []
 
-    # Return solution
-    return None
+    for i in range(len(checksums)):
+        checksum = list(map(lambda x: int(x), checksums[i].split('\t')))
+        diffs.append(max(checksum) - min(checksum))
+
+    return sum(diffs)
 
 
 def get_input(filename):

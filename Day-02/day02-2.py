@@ -1,10 +1,14 @@
 def main(raw_input):
-    # Parse input
+    checksums = raw_input.split('\n')
+    diffs = []
+    for i in range(len(checksums)):
+        checksum = list(reversed(sorted(list(map(lambda x: int(x), checksums[i].split('\t'))))))
+        for j in range(len(checksum)):
+            for k in range(j + 1, len(checksum)):
+                if checksum[j] / checksum[k] % 1 == 0:
+                    diffs.append(checksum[j] / checksum[k])
 
-    # Solve problem
-
-    # Return solution
-    return None
+    return sum(diffs)
 
 
 def get_input(filename):

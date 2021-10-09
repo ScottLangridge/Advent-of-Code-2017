@@ -1,11 +1,13 @@
 def main(raw_input):
-    # Parse input
+    raw_input = list(raw_input)
+    
+    sum = 0
+    jump = int(len(raw_input)/2)
+    for i in range(len(raw_input) - 1):
+        if raw_input[i] == raw_input[(i + jump) % len(raw_input)]:
+            sum += int(raw_input[i])
 
-    # Solve problem
-
-    # Return solution
-    return None
-
+    return sum
 
 def get_input(filename):
     with open(filename) as f:
